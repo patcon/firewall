@@ -71,8 +71,9 @@ firewall_rule "block-#{bad_ip}" do
   action :reject
 end
 
-firewall_rule 'ipv6-source' do
-  port 80
-  source '2001:db8::ff00:42:8329'
-  action :allow
-end
+# FIXME: fix only_if / not_if
+#firewall_rule 'ipv6-source' do
+#  port 80
+#  source '2001:db8::ff00:42:8329'
+#  action :allow
+#end
