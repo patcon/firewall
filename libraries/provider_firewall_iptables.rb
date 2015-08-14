@@ -94,11 +94,11 @@ class Chef
     def active?
       @active ||= begin
         cmd = shell_out!('iptables-save')
-        cmd.stdout =~ /INPUT ACCEPT/
+        cmd.stdout =~ /^INPUT ACCEPT/
       end
       @active_v6 ||= begin
         cmd = shell_out!('ip6tables-save')
-        cmd.stdout =~ /INPUT ACCEPT/
+        cmd.stdout =~ /^INPUT ACCEPT/
       end
       @active && @active_v6
     end
